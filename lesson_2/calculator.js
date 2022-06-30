@@ -6,8 +6,16 @@ step 4 - perform operation
 step 5 - output result
 */
 
+const MESSAGES = require('./calculator_messages.json');
+const LANGUAGE = 'en';
+
+function messages(message, lang = 'en') {
+  return MESSAGES[lang][message];
+}
+
+
 //welcome the user
-prompt('Welcome to the Calculator tool!');
+prompt(messages('welcome', LANGUAGE));
 
 // create prompt function
 function prompt(message) {
@@ -81,5 +89,5 @@ while (true) {
   console.log(`The output is ${output}`);
   prompt('Would you like to perform another operation? y/n');
   let answer = rlSync.question();
-  if (answer !== 'y') break;
+  if (answer[0].toLowerCase() !== 'y') break;
 }
