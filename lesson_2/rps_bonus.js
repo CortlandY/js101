@@ -31,7 +31,7 @@ function displayWinner(choice, computerChoice) {
     computerWinCount += 1;
     prompt('Computer wins!\n');
   }
-  prompt(`Current score: User ${userWinCount} : Computer ${computerWinCount}.`);
+  prompt(`Current score:\n User: ${userWinCount} vs. Computer: ${computerWinCount}.`);
 }
 
 prompt('\nWelcome to Rock-Paper-Scissors-Lizard-Spock!\nHere are your win conditions:\n\n');
@@ -53,7 +53,7 @@ while ((userWinCount < THREE_WINS) && (computerWinCount < THREE_WINS)) {
 
   displayWinner(choice, computerChoice);
 
-  if ((userWinCount <= 2) && (computerWinCount <= 2)) {
+  if ((userWinCount < THREE_WINS) && (computerWinCount < THREE_WINS)) {
     prompt('Do you want to continue playing? (y/n)');
     let answer = readline.question().toLowerCase();
     while (answer[0] !== 'y' && answer[0] !== 'n') {
@@ -72,5 +72,5 @@ if (computerWinCount === THREE_WINS) {
   prompt(`User is the grand champion by score of ${userWinCount} to ${computerWinCount}!\n\nThanks for playing!\n`);
 } else {
   console.clear();
-  prompt(`User has resigned with a current score of ${userWinCount} to ${computerWinCount}.\n`);
+  prompt(`User has resigned with a current score of User: ${userWinCount} vs. Computer: ${computerWinCount}.\n`);
 }
