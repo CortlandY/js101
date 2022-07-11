@@ -38,7 +38,7 @@ prompt('\nWelcome to Rock-Paper-Scissors-Lizard-Spock!\nHere are your win condit
 prompt('Rock (r) crushes scissors and lizard.\n=> Paper (p) covers rock and disproves Spock.\n=> Scissors (Sc) cut paper and decapitate lizard.\n=> Lizard (l) posions Spock and eats paper.\n=> Spock (sp) smashes scissors and vaporizes rock.\n\n\n');
 prompt('Let\'s play best of 5 games!\n\n');
 
-while ((userWinCount <= 2) && (computerWinCount <= 2)) {
+while ((userWinCount < THREE_WINS) && (computerWinCount < THREE_WINS)) {
 
   prompt(`Choose one: ${VALID_CHOICES.join(', ')}\n`);
   let choice = readline.question();
