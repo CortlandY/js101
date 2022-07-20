@@ -4,3 +4,4 @@ str2 = "goodbye!";
 console.log(str1);
 
 // outputs 'hello there'
+// since strings are primitive, the original value is not mutated
